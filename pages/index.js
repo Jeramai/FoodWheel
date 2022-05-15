@@ -6,8 +6,6 @@ import Wheel from '/components/Wheel'
 import styles from '/styles/Home.module.scss'
 
 export default function Home() {
-  const [spinning, setSpinning] = useState(false)
-
   return (
     <div className={styles.container}>
       <Head>
@@ -20,9 +18,7 @@ export default function Home() {
       </Head>
 
       <main id="main" className={styles.main}>
-        <Wheel spinning={spinning} onStop={() => setSpinning(false)} />
-
-        <button style={{ marginTop: '10px' }} onClick={() => setSpinning(true)}>Spin to win!</button>
+        <Wheel />
 
         <div className={styles.grid}>
           <a
