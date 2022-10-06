@@ -42,8 +42,13 @@ export default function Sidebar({ theWheel, segments, setSegments }) {
   };
 
   return (
-    <div id='sidebarWrapper' className='container' style={{ width: '250px', height: '100%', backgroundColor: '#fef6c9' }}>
-      <ul className='py-3' style={{ padding: 0 }}>
+    <div
+      id='sidebarWrapper'
+      className='container'
+      style={{ minWidth: '250px', height: '100%', backgroundColor: '#fef6c9', paddingBottom: '20px' }}
+    >
+      <h5 className='pt-3'>My favorites:</h5>
+      <ul className='pb-3' style={{ padding: 0 }}>
         {segments?.map((segment, i) => {
           if (!segment?.text) return null;
           return (
