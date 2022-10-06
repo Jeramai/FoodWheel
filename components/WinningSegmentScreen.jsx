@@ -18,7 +18,7 @@ export default function WinningSegmentScreen({ winningSegment, onHide }) {
         setRecipeData(results);
         setIsLoading(false);
       });
-  }, [expectedNumberResults]);
+  }, [expectedNumberResults, winningSegment]);
 
   const recipeBlockStyle = {
     width: '300px',
@@ -33,7 +33,7 @@ export default function WinningSegmentScreen({ winningSegment, onHide }) {
   return winningSegment && recipeData ? (
     <Modal show={true} onHide={onHide} size='xl'>
       <Modal.Header closeButton>
-        <Modal.Title>Suggested recipes "{winningSegment}"</Modal.Title>
+        <Modal.Title>Suggested recipes {`"${winningSegment}"`}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div style={{ display: 'flex', overflowX: 'auto', whiteSpace: 'nowrap' }}>
@@ -52,7 +52,12 @@ export default function WinningSegmentScreen({ winningSegment, onHide }) {
               <Link href={recipe.sourceUrl} passHref>
                 <a target='_blank' rel='noopener noreferrer'>
                   <div style={{ position: 'relative', height: '200px', width: '100%' }}>
-                    <Image src={`${recipeData.baseUri}${recipe.image}`} layout='fill' style={{ borderRadius: '8px' }} />
+                    <Image
+                      src={`${recipeData.baseUri}${recipe.image}`}
+                      layout='fill'
+                      style={{ borderRadius: '8px' }}
+                      alt={recipe.title}
+                    />
                   </div>
                   <span
                     style={{
@@ -69,7 +74,7 @@ export default function WinningSegmentScreen({ winningSegment, onHide }) {
               </Link>
               <small>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  <Image src='/cutlery.png' width={14} height={14} />
+                  <Image src='/cutlery.png' width={14} height={14} alt='Cutlery icon' />
                   <span style={{ marginLeft: '5px' }}>{recipe.servings} servings</span>
                 </div>
                 <div style={{ width: '100%', textAlign: 'center' }}>(Ready in {recipe.readyInMinutes} minutes)</div>
