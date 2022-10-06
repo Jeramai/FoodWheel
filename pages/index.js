@@ -65,10 +65,10 @@ export default function Home() {
 
       <main id="main" className={`container-fluid h-100`}>
         <div className='row h-100'>
-          <div className='col d-flex align-items-center'>
+          <div className='col-12 col-md-8 col-lg-9 d-flex align-items-center' style={{ height: '95vh' }}>
             <Wheel theWheel={theWheel} />
           </div>
-          <div className='col-auto g-0'>
+          <div className='col-12 col-md-4 col-lg-3 g-0'>
             <Sidebar theWheel={theWheel} segments={segments} setSegments={setSegments} />
           </div>
         </div>
