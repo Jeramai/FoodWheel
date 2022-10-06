@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import Image from 'next/image';
 
-export default function Wheel({ spinning, onStop }) {
+export default function Wheel({ theWheel }) {
   useEffect(() => {
     const canvas = document.getElementById('canvas');
     const main = document.getElementById('wheelWrapper');
@@ -8,26 +9,31 @@ export default function Wheel({ spinning, onStop }) {
 
     canvas.width = main.offsetWidth;
     canvas.height = main.offsetHeight;
-
-    const theWheel = new Winwheel(params);
   }, []);
 
-  const segments = [
-    { fillStyle: '#eae56f', text: 'Segment 1' },
-    { fillStyle: '#89f26e', text: 'Segment 2' },
-    { fillStyle: '#7de6ef', text: 'Segment 3' },
-    { fillStyle: '#e7706f', text: 'Segment 4' }
-  ];
-  const params = {
-    numSegments: segments.length,
-    fillStyle: '#e7706f',
-    lineWidth: 1,
-    segments
-  };
-
   return (
-    <div id='wheelWrapper' style={{ width: '100%', height: '100%' }}>
+    <div id='wheelWrapper' style={{ position: 'relative', width: '100%', height: '100%' }}>
       <canvas id='canvas' style={{ display: 'block' }} />
+      <div id='prizePin'>
+        <Image src='/pin.png' width={45} height={45} />
+      </div>
+
+      <div style={{ width: '100%', textAlign: 'center', marginTop: '10px' }}>
+        <button
+          className='btn btn-primary mt-2'
+          onClick={() => {
+            if (theWheel) {
+              theWheel.stopAnimation(false);
+
+              theWheel.rotationAngle = theWheel.rotationAngle % 360;
+
+              theWheel.startAnimation();
+            }
+          }}
+        >
+          Spin to win!
+        </button>
+      </div>
     </div>
   );
 }
