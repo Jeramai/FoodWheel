@@ -1,6 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-icons/font/bootstrap-icons';
 
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #bfbfc9 #ebeaf0;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ebeaf0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #bfbfc9;
+  border-radius: 10px;
+  border: 3px solid #ebeaf0;
+}
+
 html,
 body {
   padding: 0;

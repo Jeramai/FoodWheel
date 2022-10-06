@@ -8,10 +8,12 @@ import Sidebar from '/components/Sidebar'
 import styles from '/styles/Home.module.scss'
 import { useEffect, useState } from 'react';
 import CustomFavicon from '../components/CustomFavicon'
+import WinningSegmentScreen from '../components/WinningSegmentScreen'
 
 export default function Home() {
   const [favi, setFavi] = useState(`/favicon/1.png`)
   const [theWheel, setTheWheel] = useState();
+  const [winningSegment, setWinningSegment] = useState();
   const [segments, setSegments] = useState([
     { fillStyle: '#eae56f', text: 'Loading your favorites!' },
   ]);
@@ -42,9 +44,7 @@ export default function Home() {
         type: 'spinToStop',
         duration: 5, // In seconds
         spins: 8,
-        callbackFinished: (winningSegment) => {
-          alert('You won: ' + winningSegment.text);
-        },
+        callbackFinished: (winningSegment) => setWinningSegment(winningSegment.text),
       },
     };
 
@@ -67,7 +67,6 @@ export default function Home() {
         strategy='beforeInteractive'
       />
       <main id="main" className={`container-fluid h-100`}>
-
         <div className='row h-100'>
           <div className='col d-flex align-items-center'>
             <Wheel theWheel={theWheel} />
@@ -76,6 +75,8 @@ export default function Home() {
             <Sidebar theWheel={theWheel} segments={segments} setSegments={setSegments} />
           </div>
         </div>
+
+        {winningSegment && <WinningSegmentScreen winningSegment={winningSegment} onHide={() => setWinningSegment()} />}
       </main>
 
       <footer className={styles.footer}>
