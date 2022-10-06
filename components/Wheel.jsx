@@ -15,7 +15,7 @@ export default function Wheel({ theWheel }) {
     <div id='wheelWrapper' style={{ position: 'relative', width: '100%', height: '100%' }}>
       <canvas id='canvas' style={{ display: 'block' }} />
       <div id='prizePin'>
-        <Image src='/pin.png' width={45} height={45} />
+        <Image src='/pin.png' width={45} height={45} alt='Wheel pin' />
       </div>
 
       <div style={{ width: '100%', textAlign: 'center', marginTop: '10px' }}>
