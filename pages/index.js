@@ -1,7 +1,7 @@
 // http://dougtesting.net/winwheel/docs/
 
 import Head from 'next/head'
-import Script from 'next/Script'
+import Script from 'next/script'
 import Wheel from '/components/Wheel'
 import Sidebar from '/components/Sidebar'
 
