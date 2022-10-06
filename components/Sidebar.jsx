@@ -25,6 +25,7 @@ export default function Sidebar({ theWheel, segments, setSegments }) {
     };
 
     theWheel.addSegment(newSegment);
+    if (!localStorage.getItem('segments')) theWheel.deleteSegment(0);
     theWheel.draw();
 
     setSegments([...theWheel.segments]);

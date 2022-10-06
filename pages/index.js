@@ -61,11 +61,8 @@ export default function Home() {
       <CustomFavicon setFavi={setFavi} />
 
       <Script type='text/javascript' src='/Winwheel.js' strategy='beforeInteractive' />
-      <Script
-        type='text/javascript'
-        src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'
-        strategy='beforeInteractive'
-      />
+      <Script type='text/javascript' src='/TweenMax.js' strategy='beforeInteractive' />
+
       <main id="main" className={`container-fluid h-100`}>
         <div className='row h-100'>
           <div className='col d-flex align-items-center'>
