@@ -143,7 +143,7 @@ function OrderWrapper({ food }) {
       <div className='mt-3'>
         {partners.map((partner) => {
           return (
-            <a href={partner.url} target='_blank' rel='noopener noreferrer' style={{ margin: '8px' }}>
+            <a key={partner.name} href={partner.url} target='_blank' rel='noopener noreferrer' style={{ margin: '8px' }}>
               <Image src={`/partners/${partner.img}`} width={30} height={30} alt={partner.name} style={{ borderRadius: '8px' }} />
             </a>
           );
