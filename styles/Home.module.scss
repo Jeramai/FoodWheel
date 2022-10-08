@@ -1,10 +1,12 @@
 .footer {
   position: fixed;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   text-align: center;
   padding: 3px;
   pointer-events: none;
+  background-color: #fef6c9;
+  border-radius: 35px;
 
   span {
     pointer-events: visible;

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,300;0,700;1,300&display=swap');
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-icons/font/bootstrap-icons';
 
@@ -34,6 +35,8 @@ body {
 }
 #__next {
   height: 100vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(132deg, rgba(254, 246, 201, 1) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
 a {

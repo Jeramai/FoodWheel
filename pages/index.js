@@ -8,6 +8,7 @@ import WinningSegmentScreen from '../components/WinningSegmentScreen'
 
 import { useEffect, useState } from 'react';
 import Head from 'next/head'
+import Image from 'next/image'
 
 export default function Home() {
   const [theWheel, setTheWheel] = useState();
@@ -60,8 +61,13 @@ export default function Home() {
 
       <main id="main" className={`container-fluid h-100`}>
         <div className='row h-100'>
-          <div className='col-12 col-md-8 col-lg-9 d-flex align-items-center' style={{ height: '95vh' }}>
-            <Wheel theWheel={theWheel} />
+          <div className='col-12 col-md-8 col-lg-9 d-flex align-items-start' style={{ height: '95vh' }}>
+            <div className='d-flex flex-column w-100 h-100 align-items-start'>
+              <div className='mt-5 mb-3' style={{ margin: '0 auto' }}>
+                <Image src='/foodwheel-logo.svg' width='300px' height='70px' />
+              </div>
+              <Wheel theWheel={theWheel} />
+            </div>
           </div>
           <div className='col-12 col-md-4 col-lg-3 g-0'>
             <Sidebar theWheel={theWheel} segments={segments} setSegments={setSegments} />

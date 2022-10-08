@@ -20,7 +20,16 @@ export default function Wheel({ theWheel }) {
 
       <div style={{ width: '100%', textAlign: 'center', marginTop: '10px' }}>
         <button
-          className='btn btn-primary mt-2'
+          className='btn mt-3'
+          style={{
+            borderRadius: '50px',
+            backgroundColor: 'white',
+            padding: '10px 25px',
+            boxShadow: '0 0 10px 0px #e2daad',
+            fontFamily: 'MuseoModerno',
+            fontWeight: 900,
+            textTransform: 'uppercase'
+          }}
           onClick={() => {
             if (theWheel) {
               theWheel.stopAnimation(false);
@@ -31,7 +40,7 @@ export default function Wheel({ theWheel }) {
             }
           }}
         >
-          Spin to win!
+          Let's decide!
         </button>
       </div>
     </div>

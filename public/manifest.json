@@ -1,6 +1,7 @@
 {
   "name": "Foodwheel",
   "short_name": "Foodwheel",
+  "description": "Your favorite food, for when you can't decide.",
   "icons": [
     {
       "src": "/icons/android-chrome-48x48.png",
@@ -12,6 +13,11 @@
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "theme_color": "#fef6c9",
