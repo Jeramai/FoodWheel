@@ -40,7 +40,7 @@ export default function Wheel({ theWheel }) {
             }
           }}
         >
-          Let's decide!
+          {"Let's decide!"}
         </button>
       </div>
     </div>
