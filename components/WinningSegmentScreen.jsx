@@ -26,7 +26,7 @@ export default function WinningSegmentScreen({ winningSegment, onHide }) {
         <Modal.Title>Suggested recipes {`"${winningSegment}"`}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <RecipesWrapper recipeData={recipeData} />
+        <RecipesWrapper recipeData={recipeData} isLoading={isLoading} setIsLoading={setIsLoading} />
         <hr />
         <OrderWrapper food={winningSegment} />
       </Modal.Body>
@@ -34,7 +34,7 @@ export default function WinningSegmentScreen({ winningSegment, onHide }) {
   ) : null;
 }
 
-function RecipesWrapper({ recipeData }) {
+function RecipesWrapper({ recipeData, isLoading, setIsLoading }) {
   const recipeBlockStyle = {
     width: '300px',
     padding: '15px 8px 15px',

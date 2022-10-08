@@ -4,6 +4,11 @@
   width: 100%;
   text-align: center;
   padding: 3px;
+  pointer-events: none;
+
+  span {
+    pointer-events: visible;
+  }
 }
 
 #jeramai {
