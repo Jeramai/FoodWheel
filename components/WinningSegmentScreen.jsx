@@ -26,7 +26,12 @@ export default function WinningSegmentScreen({ winningSegment, onHide }) {
         <Modal.Title>Suggested recipes {`"${winningSegment}"`}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <RecipesWrapper recipeData={recipeData} isLoading={isLoading} setIsLoading={setIsLoading} />
+        <RecipesWrapper
+          recipeData={recipeData}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+          setExpectedNumberResults={setExpectedNumberResults}
+        />
         <hr />
         <OrderWrapper food={winningSegment} />
       </Modal.Body>
@@ -34,7 +39,7 @@ export default function WinningSegmentScreen({ winningSegment, onHide }) {
   ) : null;
 }
 
-function RecipesWrapper({ recipeData, isLoading, setIsLoading }) {
+function RecipesWrapper({ recipeData, isLoading, setIsLoading, setExpectedNumberResults }) {
   const recipeBlockStyle = {
     width: '300px',
     padding: '15px 8px 15px',
@@ -94,14 +99,14 @@ function RecipesWrapper({ recipeData, isLoading, setIsLoading }) {
         ))}
       </div>
 
-      <div style={{ textAlign: 'center', paddingTop: '15px' }}>
+      <div style={{ textAlign: 'center', paddingTop: '15px', position: 'relative' }}>
         Showing {recipeData.results?.length} out of {recipeData.totalResults} results.
         {recipeData.results?.length !== recipeData.totalResults ? (
           <Button
             variant='outline-dark'
             size='sm'
             disabled={isLoading}
-            style={{ position: 'absolute', right: '15px', bottom: '10px' }}
+            style={{ position: 'absolute', right: '0px', bottom: '-5px' }}
             onClick={() => {
               setIsLoading(true);
               setExpectedNumberResults((o) => o + 10);
