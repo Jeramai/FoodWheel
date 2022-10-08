@@ -48,7 +48,7 @@ export default function Home() {
     };
 
     if (!theWheel) setTheWheel(new Winwheel(params));
-  }, []);
+  }, [theWheel]);
 
   return (
     < >
@@ -64,7 +64,7 @@ export default function Home() {
           <div className='col-12 col-md-8 col-lg-9 d-flex align-items-start' style={{ height: '95vh' }}>
             <div className='d-flex flex-column w-100 h-100 align-items-start'>
               <div className='mt-5 mb-3' style={{ margin: '0 auto' }}>
-                <Image src='/foodwheel-logo.svg' width='300px' height='70px' />
+                <Image src='/foodwheel-logo.svg' width='300px' height='70px' alt='Wheel pin' />
               </div>
               <Wheel theWheel={theWheel} />
             </div>

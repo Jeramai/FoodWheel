@@ -13,7 +13,7 @@ export default function CustomFavicon({ setFavi }) {
     }, 250);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [setFavi]);
 
   return null;
 }
