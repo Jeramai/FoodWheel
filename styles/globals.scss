@@ -36,7 +36,21 @@ body {
 #__next {
   height: 100vh;
   background: rgb(255, 255, 255);
-  background: linear-gradient(132deg, rgba(254, 246, 201, 1) 0%, rgba(255, 255, 255, 1) 100%);
+
+  animation: AnimateBG 15s infinite ease-in-out;
+  background-size: 300% 300%;
+  background-image: radial-gradient(circle, rgba(254, 246, 201, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+@keyframes AnimateBG {
+  0% {
+    background-position: bottom left;
+  }
+  50% {
+    background-position: bottom right;
+  }
+  100% {
+    background-position: bottom left;
+  }
 }
 
 a {
