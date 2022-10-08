@@ -121,7 +121,7 @@ function RecipesWrapper({ recipeData, isLoading, setIsLoading, setExpectedNumber
 }
 
 function OrderWrapper({ food }) {
-  const postal = 'emmen-7823';
+  const postal = 'amsterdam-1078';
   const partners = [
     {
       name: 'thuisbezorgd',
