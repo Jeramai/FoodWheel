@@ -71,3 +71,35 @@ a {
   margin-right: auto;
   width: 45px;
 }
+
+#moreContent {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-size: 18pt;
+  color: #cdc6a0;
+  opacity: 0.5;
+
+  animation: showMore 10s infinite linear;
+}
+@keyframes showMore {
+  0% {
+    top: -50px;
+    opacity: 0.5;
+  }
+  33% {
+    opacity: 0.85;
+  }
+  50% {
+    top: -60px;
+    opacity: 0.5;
+  }
+  67% {
+    opacity: 0.85;
+  }
+  100% {
+    top: -50px;
+    opacity: 0.5;
+  }
+}

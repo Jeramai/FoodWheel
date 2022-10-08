@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 import style from '/styles/Home.module.scss';
 
@@ -42,61 +43,76 @@ export default function Sidebar({ theWheel, segments, setSegments }) {
   };
 
   return (
-    <div
-      id='sidebarWrapper'
-      className='container'
-      style={{
-        minWidth: '250px',
-        height: 'calc(100% - 20px)',
-        backgroundColor: '#fef6c9',
-        paddingBottom: '20px',
-        borderRadius: '35px',
-        margin: '10px 0',
-        boxShadow: '0 0 25px 0px #e2daad'
-      }}
-    >
-      <h5 className='pt-3 text-center'>My favorites</h5>
-      <ul className='pb-3' style={{ padding: 0 }}>
-        {segments?.map((segment, i) => {
-          if (!segment?.text) return null;
-          return (
-            <li
-              key={i}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between'
-              }}
-            >
-              {segment.text}
-              {theWheel?.segments?.filter((s) => s).length > 1 ? (
-                <span onClick={() => deleteSegment(i)} className={style.removeButton}>
-                  <i className='bi bi-trash-fill'></i>
-                </span>
-              ) : null}
-            </li>
-          );
-        })}
-      </ul>
+    <>
+      <div
+        id='sidebarWrapper'
+        className='container'
+        style={{
+          position: 'relative',
+          minWidth: '250px',
+          height: 'calc(100% - 20px)',
+          backgroundColor: '#fef6c9',
+          paddingBottom: '20px',
+          borderRadius: '35px',
+          margin: '10px auto',
+          boxShadow: '0 0 25px 0px #e2daad'
+        }}
+      >
+        <ShowMore />
 
-      <div className='row'>
-        <div className='col'>
-          <form onSubmit={addSegment}>
-            <div className='input-group mb-3'>
-              <input
-                type='text'
-                className='form-control'
-                placeholder='More food..'
-                aria-label='Username'
-                aria-describedby='basic-addon1'
-                ref={segmentRef}
-              />
-              <button type='submit' className='input-group-text'>
-                Add
-              </button>
-            </div>
-          </form>
+        <h5 className='pt-3 text-center'>My favorites</h5>
+        <ul className='pb-3' style={{ padding: 0 }}>
+          {segments?.map((segment, i) => {
+            if (!segment?.text) return null;
+            return (
+              <li
+                key={i}
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between'
+                }}
+              >
+                {segment.text}
+                {theWheel?.segments?.filter((s) => s).length > 1 ? (
+                  <span onClick={() => deleteSegment(i)} className={style.removeButton}>
+                    <i className='bi bi-trash-fill'></i>
+                  </span>
+                ) : null}
+              </li>
+            );
+          })}
+        </ul>
+
+        <div className='row'>
+          <div className='col'>
+            <form onSubmit={addSegment}>
+              <div className='input-group mb-3'>
+                <input
+                  type='text'
+                  className='form-control'
+                  placeholder='More food..'
+                  aria-label='Username'
+                  aria-describedby='basic-addon1'
+                  ref={segmentRef}
+                />
+                <button type='submit' className='input-group-text'>
+                  Add
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
+
+      <div className='d-flex d-md-none pb-5'></div>
+    </>
+  );
+}
+
+function ShowMore() {
+  return (
+    <div id='moreContent' className='d-flex d-md-none'>
+      <i className='bi bi-chevron-double-down'></i>
     </div>
   );
 }
