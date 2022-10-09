@@ -52,9 +52,8 @@ export default function Sidebar({ theWheel, segments, setSegments }) {
           minWidth: '250px',
           height: 'calc(100% - 20px)',
           backgroundColor: '#fef6c9',
-          paddingBottom: '20px',
           borderRadius: '35px',
-          margin: '10px auto',
+          margin: '10px auto 0',
           boxShadow: '0 0 25px 0px #e2daad'
         }}
       >
@@ -86,7 +85,7 @@ export default function Sidebar({ theWheel, segments, setSegments }) {
         <div className='row'>
           <div className='col'>
             <form onSubmit={addSegment}>
-              <div className='input-group mb-3'>
+              <div className='input-group'>
                 <input
                   type='text'
                   className='form-control'
